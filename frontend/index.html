@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GamePrice - Compare Game Prices</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">🎮 GamePrice</h1>
+    <nav>
+      <button data-view="search" class="nav-btn active">Search</button>
+      <button data-view="wishlist" class="nav-btn">Wishlist</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SEARCH VIEW -->
+    <section id="view-search" class="view active">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search a game title..." />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="search-results" class="grid"></div>
+    </section>
+
+    <!-- WISHLIST VIEW -->
+    <section id="view-wishlist" class="view">
+      <h2>My Wishlist</h2>
+      <div id="wishlist-results" class="grid"></div>
+    </section>
+
+    <!-- GAME DETAIL MODAL -->
+    <div id="detail-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="modal-close" class="close-btn">&times;</button>
+        <h2 id="modal-title"></h2>
+        <img id="modal-thumb" src="" alt="" />
+
+        <h3>Price Comparison</h3>
+        <div id="modal-deals" class="deals-list"></div>
+
+        <div class="modal-actions">
+          <button id="modal-wishlist-btn">+ Add to Wishlist</button>
+        </div>
+
+        <h3>Reviews</h3>
+        <div id="modal-reviews" class="reviews-list"></div>
+
+        <form id="review-form">
+          <input type="text" id="review-username" placeholder="Your name" required />
+          <select id="review-rating">
+            <option value="5">★★★★★ (5)</option>
+            <option value="4">★★★★☆ (4)</option>
+            <option value="3">★★★☆☆ (3)</option>
+            <option value="2">★★☆☆☆ (2)</option>
+            <option value="1">★☆☆☆☆ (1)</option>
+          </select>
+          <textarea id="review-comment" placeholder="Write your review..."></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
